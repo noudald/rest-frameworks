@@ -10,6 +10,11 @@ STYLE_CHOICES = sorted([(item, item) for item in get_all_styles()])
 
 
 class Snippet(models.Model):
+    owner = models.ForeignKey(
+        'auth.User',
+        related_name='snippets',
+        on_delete=models.CASCADE,
+    )
     created = models.DateTimeField(auto_now_add=True)
     title = models.CharField(
         max_length=100,
