@@ -6,6 +6,7 @@ from .models import IrisInput, IrisOutput
 class IrisInputSerializer(serializers.ModelSerializer):
     class Meta:
         model = IrisInput
+        ordering = ['created']
         read_only_fields = [
             'id',
             'created'
@@ -21,6 +22,7 @@ class IrisInputSerializer(serializers.ModelSerializer):
 class IrisOutputSerializer(serializers.ModelSerializer):
     class Meta:
         model = IrisOutput
+        ordering = ['created']
         read_only_fields = [
             'id',
             'created',
